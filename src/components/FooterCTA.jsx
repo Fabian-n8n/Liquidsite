@@ -2,22 +2,21 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import TypewriterHeading from '@/components/TypewriterHeading';
 
 /* Drop icon outline — just the Liquid teardrop, no wordmark */
 function DropWatermark() {
   return (
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
       <svg
-        viewBox="40 20 440 665"
+        viewBox="-20 -30 600 580"
         aria-hidden="true"
-        style={{ width: 340, height: 340, opacity: 0.07 }}
+        style={{ width: 320, height: 310, opacity: 0.06 }}
       >
         <path
           d="M472.63,276.814L307.116,27.374c-23.108-34.845-74.269-34.845-97.411,0L44.209,276.814c-16.422,24.28-28.823,51.5-36.25,80.708-5.198,20.434-7.959,41.841-7.959,63.895,0,142.724,115.7,258.424,258.428,258.424s258.418-115.7,258.418-258.424c0-53.571-16.297-103.335-44.216-144.602h0Z"
           fill="none"
           stroke="white"
-          strokeWidth="14"
+          strokeWidth="7"
         />
       </svg>
     </div>
@@ -56,11 +55,16 @@ export default function FooterCTA() {
       />
 
       <motion.div style={{ scale }} className="relative z-10 text-center max-w-3xl mx-auto">
-        <TypewriterHeading
-          white="Every trade your audience makes. "
-          dim="You earn a cut."
+        <motion.h2
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-[clamp(2.5rem,7vw,4.8rem)] font-black leading-[1.05] tracking-[-0.04em] mb-10"
-        />
+        >
+          Every trade your audience makes.{' '}
+          <span className="text-white/30">You earn a cut.</span>
+        </motion.h2>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
