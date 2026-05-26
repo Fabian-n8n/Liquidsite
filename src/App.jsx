@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import ProofBar from './components/ProofBar';
 import TwoTracks from './components/TwoTracks';
 import HowItWorks from './components/HowItWorks';
-import WhyLiquid from './components/WhyLiquid';
 import LiquidSelect from './components/LiquidSelect';
 import FAQ from './components/FAQ';
 import FooterCTA from './components/FooterCTA';
@@ -17,7 +16,6 @@ export default function App() {
       <ProofBar />
       <TwoTracks />
       <HowItWorks />
-      <WhyLiquid />
       <LiquidSelect />
       <FAQ />
       <FooterCTA />

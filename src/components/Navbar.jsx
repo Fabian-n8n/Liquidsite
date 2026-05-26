@@ -27,11 +27,17 @@ export default function Navbar() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#080808]/90 backdrop-blur-xl border-b border-white/[0.06]'
-            : 'bg-transparent'
+            ? 'border-b border-white/[0.07]'
+            : 'bg-transparent border-b border-transparent'
         }`}
+        style={scrolled ? {
+          background: 'linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(8,8,8,0.75) 100%)',
+          backdropFilter: 'blur(24px) saturate(160%)',
+          WebkitBackdropFilter: 'blur(24px) saturate(160%)',
+          boxShadow: '0 1px 0 0 rgba(255,255,255,0.04), 0 4px 24px rgba(0,0,0,0.3)',
+        } : {}}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import TypewriterHeading from '@/components/TypewriterHeading';
 
 const steps = [
   {
@@ -125,10 +126,7 @@ export default function HowItWorks() {
           className="mb-16"
         >
           <p className="section-label mb-4">How It Works</p>
-          <h2 className="section-heading">
-            Three steps, then{' '}
-            <span className="text-white/35">you're earning</span>
-          </h2>
+          <TypewriterHeading white="Three steps, then " dim="you're earning" />
         </motion.div>
 
         <motion.div

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Check, Zap, Crown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import TypewriterHeading from '@/components/TypewriterHeading';
 
 const containerVariants = {
   hidden: {},
@@ -36,7 +37,7 @@ export default function TwoTracks() {
         className="mb-16"
       >
         <p className="section-label mb-4">Two Tracks</p>
-        <h2 className="section-heading">Two ways to get paid</h2>
+        <TypewriterHeading white="Two ways to get paid" />
       </motion.div>
 
       <motion.div

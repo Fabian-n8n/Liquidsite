@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '@/components/ui/accordion';
+import TypewriterHeading from '@/components/TypewriterHeading';
 
 const faqs = [
   {
@@ -43,9 +44,10 @@ export default function FAQ() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-[clamp(2rem,5vw,3rem)] font-black text-white/80 tracking-[-0.03em] leading-tight">
-          Frequently Asked Questions
-        </h2>
+        <TypewriterHeading
+          white="Frequently Asked Questions"
+          className="text-[clamp(2rem,5vw,3rem)] font-black text-white/80 tracking-[-0.03em] leading-tight"
+        />
       </motion.div>
 
       <motion.div
