@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import liquidLogo from '@/assets/liquid-logo.svg';
 
 const navLinks = [
   { label: 'Markets', href: 'https://www.liquid.trade/' },
@@ -34,14 +35,8 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="https://www.liquid.trade/" className="flex items-center gap-2 group">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M10 2C10 2 4 8 4 12.5C4 15.538 6.686 18 10 18C13.314 18 16 15.538 16 12.5C16 8 10 2 10 2Z"
-                fill="#1ECFB3"
-              />
-            </svg>
-            <span className="text-white font-semibold text-sm tracking-tight">Liquid</span>
+          <a href="https://www.liquid.trade/" className="flex items-center group">
+            <img src={liquidLogo} alt="Liquid" height="28" style={{ height: '28px', width: 'auto' }} />
           </a>
 
           {/* Desktop Nav */}

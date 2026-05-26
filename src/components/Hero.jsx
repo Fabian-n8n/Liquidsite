@@ -30,13 +30,10 @@ export default function Hero() {
     <section ref={ref} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16">
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Right-side dim circular glow */}
         <div
-          className="absolute top-0 right-0 w-[900px] h-[900px] opacity-[0.07]"
-          style={{ background: 'radial-gradient(ellipse at center, #1ECFB3 0%, transparent 65%)', transform: 'translate(20%,-25%)' }}
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] opacity-[0.04]"
-          style={{ background: 'radial-gradient(ellipse at center, #1ECFB3 0%, transparent 65%)', transform: 'translate(-30%,30%)' }}
+          className="absolute top-1/2 right-0 -translate-y-1/2 w-[700px] h-[700px] opacity-[0.045]"
+          style={{ background: 'radial-gradient(circle at center, #1ECFB3 0%, transparent 60%)', transform: 'translate(30%, -50%)' }}
         />
         {/* Subtle grid */}
         <div
@@ -83,9 +80,6 @@ export default function Hero() {
                 Apply now <ArrowRight size={16} />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="#how-it-works">How it works</a>
-            </Button>
           </motion.div>
 
           {/* Stats */}
@@ -99,46 +93,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Floating earnings card */}
-        <motion.div
-          initial={{ opacity: 0, x: 60, scale: 0.93 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute right-6 top-1/2 -translate-y-1/2 hidden xl:block"
-          style={{ animation: 'float 6s ease-in-out infinite' }}
-        >
-          <div className="glass-card-accent w-64 p-5 shadow-glass-accent">
-            <div className="text-[11px] text-white/35 mb-1 font-medium tracking-wide">Total earnings</div>
-            <div className="text-3xl font-black text-accent tracking-tight mb-4">$4,210.50</div>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] text-white/35">Referral tier</span>
-              <div className="flex gap-1.5">
-                {['Silver', 'Gold', 'Platinum'].map((tier, i) => (
-                  <span
-                    key={tier}
-                    className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
-                      i === 1
-                        ? 'bg-accent/20 text-accent border border-accent/30'
-                        : 'bg-white/[0.06] text-white/25 border border-white/[0.06]'
-                    }`}
-                  >
-                    {tier}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="border-t border-white/[0.06] pt-3 space-y-2">
-              <div className="flex justify-between text-[11px]">
-                <span className="text-white/35">This month</span>
-                <span className="text-accent font-semibold">+$847.20</span>
-              </div>
-              <div className="flex justify-between text-[11px]">
-                <span className="text-white/35">Active referrals</span>
-                <span className="text-white/60 font-medium">12</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </motion.div>
 
       {/* Bottom fade */}
