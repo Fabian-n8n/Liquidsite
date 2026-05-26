@@ -16,7 +16,7 @@ const Dot = () => (
 );
 
 export default function ProofBar() {
-  const repeated = [...items, ...items];
+  const repeated = [...items, ...items, ...items, ...items];
 
   return (
     <motion.div

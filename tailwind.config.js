@@ -19,8 +19,8 @@ export default {
         'border-accent': 'rgba(30,207,179,0.25)',
       },
       fontFamily: {
-        sans: ['Geist', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Saans', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'monospace'],
       },
       backgroundImage: {
         'radial-accent': 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30,207,179,0.12) 0%, transparent 60%)',
@@ -36,7 +36,7 @@ export default {
       },
       keyframes: {
         ticker: {
-          '0%': { transform: 'translateX(-50%)' },
+          '0%': { transform: 'translateX(-25%)' },
           '100%': { transform: 'translateX(0)' },
         },
         pulseGlow: {

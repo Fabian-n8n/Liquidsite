@@ -8,9 +8,9 @@ function DropWatermark() {
   return (
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
       <svg
-        viewBox="-20 -30 600 580"
+        viewBox="-20 -30 560 720"
         aria-hidden="true"
-        style={{ width: 320, height: 310, opacity: 0.06 }}
+        style={{ width: 252, height: 324, opacity: 0.06 }}
       >
         <path
           d="M472.63,276.814L307.116,27.374c-23.108-34.845-74.269-34.845-97.411,0L44.209,276.814c-16.422,24.28-28.823,51.5-36.25,80.708-5.198,20.434-7.959,41.841-7.959,63.895,0,142.724,115.7,258.424,258.428,258.424s258.418-115.7,258.418-258.424c0-53.571-16.297-103.335-44.216-144.602h0Z"
