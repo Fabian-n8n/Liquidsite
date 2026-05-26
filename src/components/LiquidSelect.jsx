@@ -9,60 +9,61 @@ const dealSteps = [
   { pct: '60%', label: 'When you hit the milestone', accent: false },
 ];
 
+/* DiceBear lorelei — anime-style illustrated avatars, each with unique seed + bg */
 const whoFor = [
   {
     role: 'Content Creators',
     handle: '@creator',
-    initials: 'CC',
-    gradient: ['#FF6B6B', '#FF8E53'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=SakuraFilms&backgroundColor=ffd5dc&backgroundType=solid',
+    bg: '#FF6B6B',
     desc: 'YouTube, TikTok, Instagram — your audience watches. Now they can earn.',
     tags: ['YouTube', 'TikTok'],
   },
   {
     role: 'Podcast Hosts',
     handle: '@podcast',
-    initials: 'PH',
-    gradient: ['#A855F7', '#EC4899'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=MikePodcast&backgroundColor=d5b9f5&backgroundType=solid',
+    bg: '#A855F7',
     desc: "Listeners trust your voice. Turn that trust into real-time revenue.",
     tags: ['Spotify', 'Apple Podcasts'],
   },
   {
     role: 'Publishers',
     handle: '@publisher',
-    initials: 'PB',
-    gradient: ['#3B82F6', '#06B6D4'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=AkiraPress&backgroundColor=b6d5f5&backgroundType=solid',
+    bg: '#3B82F6',
     desc: 'Editorial reach meets trading intelligence. Monetize your readership.',
     tags: ['Newsletter', 'Blog'],
   },
   {
     role: 'Media Channels',
     handle: '@media',
-    initials: 'MC',
-    gradient: ['#06B6D4', '#10B981'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=YukiNews&backgroundColor=b6f5f0&backgroundType=solid',
+    bg: '#06B6D4',
     desc: 'Broadcast to thousands. Your earnings scale with your reach.',
     tags: ['Telegram', 'Discord'],
   },
   {
     role: 'Community Operators',
     handle: '@community',
-    initials: 'CO',
-    gradient: ['#10B981', '#34D399'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=HanaGroup&backgroundColor=b6f5c8&backgroundType=solid',
+    bg: '#10B981',
     desc: 'Your Discord or Telegram members are your revenue engine.',
     tags: ['Discord', 'Community'],
   },
   {
     role: 'Trading Educators',
     handle: '@educator',
-    initials: 'TE',
-    gradient: ['#F59E0B', '#EF4444'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=KaiTeacher&backgroundColor=f5e6b6&backgroundType=solid',
+    bg: '#F59E0B',
     desc: 'Teach trading. Earn every time a student executes a trade.',
     tags: ['Courses', 'Live Trading'],
   },
   {
     role: 'Signal Group Leads',
     handle: '@signals',
-    initials: 'SG',
-    gradient: ['#EC4899', '#8B5CF6'],
+    avatar: 'https://api.dicebear.com/9.x/lorelei/svg?seed=ReiSignals&backgroundColor=f5b6e6&backgroundType=solid',
+    bg: '#EC4899',
     desc: 'Your calls move markets. Now they move your wallet too.',
     tags: ['Crypto', 'Signals'],
   },
@@ -93,24 +94,32 @@ function AvatarCarousel() {
           key={idx}
           custom={direction}
           variants={{
-            enter: (d) => ({ opacity: 0, y: d * 18 }),
+            enter: (d) => ({ opacity: 0, y: d * 16 }),
             center: { opacity: 1, y: 0 },
-            exit: (d) => ({ opacity: 0, y: d * -18 }),
+            exit: (d) => ({ opacity: 0, y: d * -16 }),
           }}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Avatar row */}
           <div className="flex items-center gap-4 mb-4">
             <div
-              className="w-14 h-14 rounded-full flex items-center justify-center text-base font-black text-white flex-shrink-0 shadow-[0_0_24px_rgba(0,0,0,0.4)]"
-              style={{
-                background: `linear-gradient(135deg, ${person.gradient[0]}, ${person.gradient[1]})`,
-              }}
+              className="w-14 h-14 rounded-full flex-shrink-0 overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)]"
+              style={{ background: person.bg + '33', border: `1.5px solid ${person.bg}44` }}
             >
-              {person.initials}
+              <img
+                src={person.avatar}
+                alt={person.role}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  /* fallback: show colored initial circle */
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.background = person.bg;
+                }}
+              />
             </div>
             <div>
               <div className="font-bold text-white tracking-tight text-[0.95rem]">

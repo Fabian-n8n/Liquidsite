@@ -1,5 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -21,13 +20,8 @@ const stats = [
 ];
 
 export default function Hero() {
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 600], [0, 80]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
-
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16">
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Right-side dim circular glow */}
@@ -45,7 +39,7 @@ export default function Hero() {
         />
       </div>
 
-      <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-3xl">
 
           {/* Label */}
@@ -93,7 +87,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-      </motion.div>
+      </div>
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#080808] to-transparent pointer-events-none" />

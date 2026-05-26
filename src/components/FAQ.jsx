@@ -42,7 +42,7 @@ export default function FAQ() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16"
+        className="mb-16"
       >
         <TypewriterHeading
           white="Frequently Asked Questions"
