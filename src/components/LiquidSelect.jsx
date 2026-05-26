@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const whoFor = [
   'Content creators',
@@ -54,10 +55,9 @@ export default function LiquidSelect() {
               The milestone is yours to negotiate — first-time depositors, trading volume, or a hybrid of both. Attribution window is locked at signing.
             </p>
 
-            <a href="#apply" className="btn-primary">
-              Apply for Select
-              <ArrowRight size={15} />
-            </a>
+            <Button asChild variant="primary">
+              <a href="#apply">Apply for Select <ArrowRight size={15} /></a>
+            </Button>
           </motion.div>
 
           {/* Right — deal structure card */}
