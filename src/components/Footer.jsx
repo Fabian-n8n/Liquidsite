@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import liquidLogo from '@/assets/liquid-logo.svg';
 
 const markets = {
   CRYPTO: ['BTC', 'ETH', 'SOL', 'LINK', 'DOGE'],
@@ -102,11 +103,8 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           {/* Logo */}
-          <a href="https://www.liquid.trade/" className="flex items-center gap-2">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-              <path d="M10 2C10 2 4 8 4 12.5C4 15.538 6.686 18 10 18C13.314 18 16 15.538 16 12.5C16 8 10 2 10 2Z" fill="#1ECFB3" />
-            </svg>
-            <span className="text-sm font-semibold text-white/50">Liquid</span>
+          <a href="https://www.liquid.trade/" className="flex items-center">
+            <img src={liquidLogo} alt="Liquid" style={{ height: '22px', width: 'auto' }} />
           </a>
           <p className="text-[11px] text-white/20 max-w-2xl leading-[1.7]">
             *Maximum leverage varies by market and asset class. 200x leverage available on select forex pairs via Ostium. Crypto perpetuals support up to 50x leverage.

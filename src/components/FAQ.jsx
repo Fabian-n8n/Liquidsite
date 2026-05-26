@@ -5,7 +5,6 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '@/components/ui/accordion';
-import TypewriterHeading from '@/components/TypewriterHeading';
 
 const faqs = [
   {
@@ -36,26 +35,23 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
+    <section className="py-32 px-6 max-w-7xl mx-auto text-center">
+      <motion.h2
+        initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6 }}
-        className="mb-16"
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-[clamp(2rem,5vw,3rem)] font-black text-white/80 tracking-[-0.03em] leading-tight mb-16"
       >
-        <TypewriterHeading
-          white="Frequently Asked Questions"
-          className="text-[clamp(2rem,5vw,3rem)] font-black text-white/80 tracking-[-0.03em] leading-tight"
-        />
-      </motion.div>
+        Frequently Asked Questions
+      </motion.h2>
 
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-2xl mx-auto"
+        className="max-w-2xl mx-auto text-left"
       >
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, i) => (
