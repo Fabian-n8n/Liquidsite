@@ -211,7 +211,7 @@
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 10px;
     padding: 16px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Saans', system-ui, sans-serif;
     font-size: 0.75rem;
   }
 
@@ -230,7 +230,7 @@
     font-size: 0.65rem;
     color: rgba(255,255,255,0.35);
     margin-bottom: 4px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Saans', system-ui, sans-serif;
     letter-spacing: 0.02em;
   }
 
@@ -244,7 +244,7 @@
     font-weight: 600;
     width: 100%;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Saans', system-ui, sans-serif;
   }
 
   .ui-tag {
@@ -257,7 +257,7 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Saans', system-ui, sans-serif;
   }
 
   @keyframes ticker {
@@ -280,7 +280,7 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--accent);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Saans', system-ui, sans-serif;
   }
 
   .faq-item {
